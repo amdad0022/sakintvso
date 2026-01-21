@@ -1,0 +1,17 @@
+{
+  "name": "Sakin Tvs Ledger Elite",
+  "short_name": "SakinTvs",
+  "description": "Enterprise-grade daily ledger for Nagad distributors.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F9FAFB",
+  "theme_color": "#E2136E",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/5968/5968313.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

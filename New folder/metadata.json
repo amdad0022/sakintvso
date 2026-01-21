@@ -1,0 +1,7 @@
+{
+  "name": "Sakin Tvs",
+  "description": "An enterprise-grade daily ledger and agent transaction management system for Nagad distributors, featuring role-based access, manual due tracking, and professional financial reporting.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

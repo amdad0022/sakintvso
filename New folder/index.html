@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#E2136E">
+    <title>Sakin Tvs Ledger Elite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-rose: #E2136E;
+            --brand-charcoal: #111827;
+            --brand-background: #F9FAFB;
+            --safe-top: env(safe-area-inset-top);
+            --safe-bottom: env(safe-area-inset-bottom);
+        }
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+        #root {
+            width: 100%;
+            height: 100%;
+            max-width: 450px;
+            background: var(--brand-background);
+            position: relative;
+            box-shadow: 0 0 50px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .custom-scrollbar::-webkit-scrollbar { display: none; }
+        .glass-light {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .ruby-gradient { background-color: var(--brand-rose); }
+        
+        .screen {
+            display: flex;
+            flex-direction: column;
+            background: var(--brand-background);
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .content-area { 
+            flex: 1; 
+            overflow-y: auto; 
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 20px;
+        }
+
+        .nav-wrapper {
+            flex-shrink: 0;
+            background: white;
+            padding: 0.8rem 1.2rem;
+            padding-bottom: calc(0.8rem + var(--safe-bottom));
+            border-top: 1px solid rgba(0,0,0,0.05);
+            z-index: 100;
+        }
+
+        .nav-bar-static {
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 20px;
+            background: #F8FAFC;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        input:focus { outline: none; border-color: var(--brand-rose); }
+        .animate-in { animation: fadeIn 0.3s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .premium-shadow { box-shadow: 0 10px 30px -10px rgba(226, 19, 110, 0.1); }
+
+        /* GOLDEN PREMIUM SHINE ANIMATION */
+        @keyframes golden-shine {
+            0% { transform: translateX(-150%) skewX(-25deg); }
+            50% { transform: translateX(150%) skewX(-25deg); }
+            100% { transform: translateX(150%) skewX(-25deg); }
+        }
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .shine-effect::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transform: translateX(-150%) skewX(-25deg);
+            animation: golden-shine 4s infinite ease-in-out;
+        }
+
+        /* BALLOON BURST ANIMATION */
+        @keyframes burst {
+            0% { transform: translate(-50%, -50%) scale(0.1); opacity: 0; }
+            10% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translate(var(--tw-translate-x), var(--tw-translate-y)) scale(1.2); opacity: 0; }
+        }
+        .burst-particle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 14px;
+            height: 18px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 5;
+            animation: burst 2.5s infinite ease-out;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "jspdf": "https://esm.sh/jspdf@^4.0.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="antialiased">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
